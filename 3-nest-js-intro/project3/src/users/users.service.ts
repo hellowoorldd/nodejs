@@ -13,7 +13,11 @@ export class UsersService implements OnModuleInit {
 		return this.#users;
 	}
 
-	createUser(userDto: UserDto) {
+	findUser(index: number) {
+		return this.#users[index];
+	}
+
+	createUser(userDto: UserDto): UserDto {
 		const newUser = {
 			id: new Date().getTime(),
 			...userDto,
